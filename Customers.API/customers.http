@@ -1,0 +1,28 @@
+GET http://localhost:5097/api/customers
+
+###
+GET http://localhost:5097/api/customers/cf70694b-32c4-4f9f-8b79-44ef2782b269
+
+###
+POST http://localhost:5097/api/customers
+Content-Type: application/json
+
+{
+    "githubusername": "katya-dev",
+    "name": "Katya",
+    "customeraddressid": "cbf96938-3e63-4584-9f8c-2e1554563ff3"
+}
+
+###
+PUT http://localhost:5097/api/customers/cf70694b-32c4-4f9f-8b79-44ef2782b269
+Content-Type: application/json
+
+{
+    "githubusername": "mashadev",
+    "name": "Maria",
+    "customeraddressid": "8f3bdfbc-df29-4dd0-952f-4a31b2382fb3"
+}
+
+
+###
+GET http://localhost:5097/api/customers/addresses
