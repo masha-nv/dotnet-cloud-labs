@@ -1,10 +1,6 @@
 using Customers.API.Data;
 using Customers.API.Features.CustomerAddress;
-using Customers.API.Features.Customers.CreateCustomer;
-using Customers.API.Features.Customers.DeleteCustomer;
-using Customers.API.Features.Customers.GetCustomerById;
-using Customers.API.Features.Customers.GetCustomers;
-using Customers.API.Features.Customers.UpdateCustomer;
+using Customers.API.Features.Customers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,12 +9,8 @@ builder.Services.AddSingleton<CustomerData>();
 
 var app = builder.Build();
 
-app.MapGetCustomersEndpoint();
-app.MapGetCustomerByIdEndpoint();
-app.MapCreateCustomerEndpoint();
-app.MapUpdateCustomerEndpoint();
-app.MapDeleteCustomerEndpoint();
+app.MapCustomersEndpoints();
 
-app.MapGetCustomerAddresses();
+app.MapCustomerAddressEndpoints();
 
 app.Run();

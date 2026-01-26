@@ -9,7 +9,7 @@ public static class DeleteCustomerEndpoint
     public static void MapDeleteCustomerEndpoint(this IEndpointRouteBuilder app)
     {
 
-        app.MapDelete("/api/customers/{id}", ([FromRoute] Guid id, CustomerData data) =>
+        app.MapDelete("/{id}", ([FromRoute] Guid id, CustomerData data) =>
         {
             data.DeleteCustomer(id);
             return Results.NoContent();

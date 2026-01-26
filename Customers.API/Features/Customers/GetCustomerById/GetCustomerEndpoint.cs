@@ -9,7 +9,7 @@ public static class GetCustomerEndpoint
 {
     public static void MapGetCustomerByIdEndpoint(this IEndpointRouteBuilder app)
     {
-        app.MapGet("/api/customers/{id}", ([FromRoute] Guid id, CustomerData data) =>
+        app.MapGet("/{id}", ([FromRoute] Guid id, CustomerData data) =>
 {
     CustomerDetailsDto? customer;
     try
