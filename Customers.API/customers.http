@@ -1,27 +1,30 @@
 GET http://localhost:5097/api/customers
 
 ###
-GET http://localhost:5097/api/customers/cf70694b-32c4-4f9f-8b79-44ef2782b269
+GET http://localhost:5097/api/customers/cbf82850-ffb8-4d59-8af8-7765e3baed82
 
 ###
 POST http://localhost:5097/api/customers
 Content-Type: application/json
 
 {
-    "githubusername": "katya-dev",
+    "githubusername": "tanya-dev",
     "name": "Katya",
-    "customeraddressid": "cbf96938-3e63-4584-9f8c-2e1554563ff3"
+    "customeraddressid": "570868df-9cb1-4600-ae1e-b10d3dafe8fc"
 }
 
 ###
-PUT http://localhost:5097/api/customers/cf70694b-32c4-4f9f-8b79-44ef2782b269
+PUT http://localhost:5097/api/customers/b2936cc3-ab81-4ff2-9bb6-4bca79682543
 Content-Type: application/json
 
 {
     "githubusername": "mashadev",
     "name": "Maria",
-    "customeraddressid": "8f3bdfbc-df29-4dd0-952f-4a31b2382fb3"
+    "customeraddressid": "570868df-9cb1-4600-ae1e-b10d3dafe8fc"
 }
+
+###
+DELETE http://localhost:5097/api/customers/b2936cc3-ab81-4ff2-9bb6-4bca79682543
 
 
 ###

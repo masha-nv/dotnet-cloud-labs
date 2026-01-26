@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Mappers/" />
+    <Folder Include="Data/" />
+    <Folder Include="Features/CustomerAddress/" />
+    <Folder Include="Features/Customers/Constants/" />
+    <Folder Include="Features/Customers/DeleteCustomer/" />
+    <Folder Include="Features/Customers/GetCustomerById/" />
+    <Folder Include="Features/Customers/UpdateCustomer/" />
     <Folder Include="Models/" />
   </ItemGroup>
 
