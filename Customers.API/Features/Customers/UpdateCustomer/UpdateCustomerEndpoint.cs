@@ -8,7 +8,7 @@ public static class UpdateCustomerEndpoint
 {
     public static void MapUpdateCustomerEndpoint(this IEndpointRouteBuilder app)
     {
-        app.MapPut("/api/customers/{id}", ([FromRoute] Guid id, [FromBody] UpdateCustomerDto customer, CustomerData data) =>
+        app.MapPut("/{id}", ([FromRoute] Guid id, [FromBody] UpdateCustomerDto customer, CustomerData data) =>
 {
     try
     {

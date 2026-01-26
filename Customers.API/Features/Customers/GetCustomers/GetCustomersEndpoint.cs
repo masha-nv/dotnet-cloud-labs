@@ -7,6 +7,6 @@ public static class GetCustomersEndpoint
 {
     public static void MapGetCustomersEndpoint(this IEndpointRouteBuilder app)
     {
-        app.MapGet("/api/customers", (CustomerData data) => data.GetCustomers());
+        app.MapGet("/", (CustomerData data) => data.GetCustomers());
     }
 }
