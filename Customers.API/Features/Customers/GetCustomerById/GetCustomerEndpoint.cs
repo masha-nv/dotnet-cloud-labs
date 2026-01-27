@@ -9,17 +9,14 @@ public static class GetCustomerEndpoint
 {
     public static void MapGetCustomerByIdEndpoint(this IEndpointRouteBuilder app)
     {
-        app.MapGet("/{id}", ([FromRoute] Guid id, CustomerData data) =>
+        app.MapGet("/{id}", async ([FromRoute] Guid id, CustomerContext dbContext) =>
 {
-    CustomerDetailsDto? customer;
-    try
+    var customer = await dbContext.Customers.FindAsync(id);
+    if (customer is null)
     {
-        customer = data.GetCustomer(id);
+        return Results.NotFound();
     }
-    catch (Exception ex)
-    {
-        return Results.NotFound(ex.Message);
-    }
+
     return Results.Ok(customer);
 }).WithName(RouteNames.GetCustomerByIdEndPoint);
     }

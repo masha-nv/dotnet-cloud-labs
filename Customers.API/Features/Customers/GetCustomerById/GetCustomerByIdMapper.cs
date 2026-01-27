@@ -9,7 +9,7 @@ public static class GetCustomerByIdMapper
         return new CustomerDetailsDto(
             customer.Id,
             customer.Name,
-            customer.Address.Country,
+            customer.CustomerAddressId,
             customer.LastVisit,
             customer.GithubUserName);
     }

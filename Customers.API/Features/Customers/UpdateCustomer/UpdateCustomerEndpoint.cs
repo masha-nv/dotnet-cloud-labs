@@ -8,17 +8,18 @@ public static class UpdateCustomerEndpoint
 {
     public static void MapUpdateCustomerEndpoint(this IEndpointRouteBuilder app)
     {
-        app.MapPut("/{id}", ([FromRoute] Guid id, [FromBody] UpdateCustomerDto customer, CustomerData data) =>
-{
-    try
-    {
-        data.UpdateCustomer(id, customer);
-        return Results.NoContent();
-    }
-    catch (Exception ex)
-    {
-        return Results.BadRequest(ex.Message);
-    }
-});
+        app.MapPut("/{id}", async ([FromRoute] Guid id, [FromBody] UpdateCustomerDto customer, CustomerContext dbContext) =>
+        {
+            var found = await dbContext.Customers.FindAsync(id);
+            if (found is null)
+            {
+                return Results.NotFound();
+            }
+            found.CustomerAddressId = customer.CustomerAddressId;
+            found.GithubUserName = customer.GithubUserName;
+            found.Name = customer.Name;
+            await dbContext.SaveChangesAsync();
+            return Results.NoContent();
+        });
     }
 }

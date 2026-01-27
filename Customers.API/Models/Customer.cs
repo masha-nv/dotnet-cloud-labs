@@ -13,8 +13,9 @@ public class Customer
     public Guid Id { get; set; }
 
     [ForeignKey("CustomerAddress")]
+    [Required]
     public Guid CustomerAddressId { get; set; }
 
-    public required CustomerAddress Address { get; set; }
+    public CustomerAddress? Address { get; set; }
     public required DateOnly LastVisit { get; set; }
 }
