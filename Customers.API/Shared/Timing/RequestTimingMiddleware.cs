@@ -18,7 +18,7 @@ public class RequestTimingMiddleware(RequestDelegate next, ILogger<RequestTiming
         }
         catch (Exception ex)
         {
-            logger.LogInformation("Request failed with {ErrorMessage}", ex.Message);
+            logger.LogInformation("Request failed with {ErrorMessage} with Status Code {statusCode}", ex.Message, context.Response.StatusCode);
         }
     }
 }
