@@ -4,10 +4,13 @@ using Customers.API.Features.Customers;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
 builder.Services.AddValidation();
-builder.Services.AddSingleton<CustomerData>();
+builder.Services.AddSqlite<CustomerContext>(connectionString: builder.Configuration.GetConnectionString("CustomersDb"));
 
 var app = builder.Build();
+
+app.AddMigrations().SeedDb();
 
 app.MapCustomersEndpoints();
 

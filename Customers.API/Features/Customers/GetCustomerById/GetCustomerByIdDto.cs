@@ -5,7 +5,7 @@ namespace Customers.API.Features.Customers.GetCustomerById;
 public record CustomerDetailsDto(
         Guid Id,
         string Name,
-        string Country,
+        Guid CustomerAddressId,
         DateOnly LastVisit,
         string GithubUserName
 );
