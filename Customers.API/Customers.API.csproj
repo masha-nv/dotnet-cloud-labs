@@ -14,6 +14,8 @@
     <Folder Include="Features/Customers/GetCustomerById/" />
     <Folder Include="Features/Customers/UpdateCustomer/" />
     <Folder Include="Models/" />
+    <Folder Include="Shared/" />
+    <Folder Include="Shared/Timing/" />
   </ItemGroup>
 
   <ItemGroup>
