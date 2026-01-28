@@ -19,7 +19,7 @@ public static class GetCustomerEndpoint
                 return Results.NotFound();
             }
 
-            return Results.Ok(customer);
+            return Results.Ok(customer.ToCustomerDetailsDto());
         }).WithName(RouteNames.GetCustomerByIdEndPoint);
     }
 

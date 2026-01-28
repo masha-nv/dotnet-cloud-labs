@@ -9,4 +9,8 @@ public record UpdateCustomerDto(
 
     [StringLength(10, MinimumLength = 1)]
     string GithubUserName,
-    Guid CustomerAddressId);
+    Guid CustomerAddressId)
+
+{
+    public IFormFile? ImageFile { get; set; }
+};

@@ -16,7 +16,9 @@
     <Folder Include="Models/" />
     <Folder Include="Shared/" />
     <Folder Include="Shared/ErrorHandling/" />
+    <Folder Include="Shared/FileUpload/" />
     <Folder Include="Shared/Timing/" />
+    <Folder Include="wwwroot/" />
   </ItemGroup>
 
   <ItemGroup>

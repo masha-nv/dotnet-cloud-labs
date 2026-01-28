@@ -7,5 +7,6 @@ public record CustomerDetailsDto(
         string Name,
         Guid CustomerAddressId,
         DateOnly LastVisit,
-        string GithubUserName
+        string GithubUserName,
+        string ImageUri
 );
