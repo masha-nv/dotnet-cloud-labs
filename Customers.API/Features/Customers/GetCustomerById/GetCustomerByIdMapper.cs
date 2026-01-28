@@ -11,6 +11,8 @@ public static class GetCustomerByIdMapper
             customer.Name,
             customer.CustomerAddressId,
             customer.LastVisit,
-            customer.GithubUserName);
+            customer.GithubUserName,
+            customer.FileUri
+            );
     }
 }

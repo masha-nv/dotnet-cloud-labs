@@ -1,15 +1,15 @@
-GET http://localhost:5097/api/customers
+GET http://localhost:5097/api/customers?Page=1&PageSize=10&Query=mu
 
 ###
 GET http://localhost:5097/api/customers/013bec40-4449-4884-a6aa-3435fafd306e
 
 ###
 POST http://localhost:5097/api/customers
-Content-Type: application/json
+Content-Type: multipart/form-data
 
 {
-    "githubusername": "masha-dev",
-    "name": "Maria",
+    "githubusername": "gypsy-dev",
+    "name": "Gypsy",
     "customeraddressid": "BFE9CE1C-806D-4E23-AF28-50F00416EBA6"
 }
 

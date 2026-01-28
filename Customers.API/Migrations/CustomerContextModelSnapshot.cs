@@ -26,6 +26,10 @@ namespace Customers.API.Migrations
                     b.Property<Guid>("CustomerAddressId")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("FileUri")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("GithubUserName")
                         .IsRequired()
                         .HasColumnType("TEXT");
