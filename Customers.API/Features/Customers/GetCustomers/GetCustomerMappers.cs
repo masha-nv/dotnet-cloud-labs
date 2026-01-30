@@ -7,6 +7,6 @@ public static class GetCustomerMappers
 {
     public static CustomerSummaryDto ToCustomerSummaryDto(this Models.Customer customer)
     {
-        return new CustomerSummaryDto(customer.Id, customer.Name, customer.LastVisit, customer.Address!.Country, customer.FileUri);
+        return new CustomerSummaryDto(customer.Id, customer.Name, customer.LastVisit, customer.Address!.Country, customer.FileUri, customer.LastUpdatedBy);
     }
 }

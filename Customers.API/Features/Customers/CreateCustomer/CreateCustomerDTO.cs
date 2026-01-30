@@ -15,3 +15,13 @@ public record CreateCustomerDto(
     public IFormFile? ImageFile { get; set; }
 };
 
+
+public record CustomerDetailsDto(
+        Guid Id,
+        string Name,
+        Guid CustomerAddressId,
+        DateOnly LastVisit,
+        string GithubUserName,
+        string ImageUri,
+        string LastUpdatedBy
+);

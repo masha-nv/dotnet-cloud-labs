@@ -19,4 +19,6 @@ public class Customer
     public CustomerAddress? Address { get; set; }
     public required DateOnly LastVisit { get; set; }
     public required string FileUri { get; set; }
+
+    public required string LastUpdatedBy { get; set; }
 }

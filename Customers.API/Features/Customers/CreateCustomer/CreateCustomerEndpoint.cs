@@ -5,6 +5,8 @@ using Customers.API.Features.Customers.Constants;
 using Customers.API.Features.Customers.GetCustomerById;
 using Microsoft.AspNetCore.Mvc;
 using Customers.API.Shared.FileUpload;
+using System.Security.Claims;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace Customers.API.Features.Customers.CreateCustomer;
 
@@ -17,9 +19,17 @@ public static class CreateCustomerEndpoint
         app.MapPost("/", async (
             [FromForm] CreateCustomerDto customer,
             [FromServices] FileUploadHandler fileUploadHandler,
-            [FromServices] CustomerContext dbContext) =>
+            [FromServices] CustomerContext dbContext,
+            ClaimsPrincipal principal) =>
         {
+            if (principal?.Identity?.IsAuthenticated == false)
+            {
+                return Results.Unauthorized();
+            }
             var imageUri = DefaultImageUri;
+
+
+            var lastUpdatedBy = principal?.FindFirstValue(JwtRegisteredClaimNames.Sub);
 
             if (customer.ImageFile is not null)
             {
@@ -32,7 +42,7 @@ public static class CreateCustomerEndpoint
                 imageUri = result.FileUploadUrl;
             }
 
-            Models.Customer c = customer.ToNewCustomer(imageUri!);
+            Models.Customer c = customer.ToNewCustomer(imageUri!, lastUpdatedBy!);
             await dbContext.Customers.AddAsync(c);
             await dbContext.SaveChangesAsync();
             return Results.CreatedAtRoute(RouteNames.GetCustomerByIdEndPoint, new { id = c.Id }, c.ToCustomerDetailsDto());
