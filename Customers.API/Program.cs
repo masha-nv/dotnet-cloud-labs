@@ -17,6 +17,13 @@ builder.Services.AddProblemDetails().AddExceptionHandler<GlobalExceptionHandler>
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<FileUploadHandler>();
 
+
+builder.Services.AddAuthentication()
+                .AddJwtBearer(options =>
+                {
+                    options.MapInboundClaims = false;
+                });
+
 var app = builder.Build();
 
 app.AddMigrations().SeedDb();

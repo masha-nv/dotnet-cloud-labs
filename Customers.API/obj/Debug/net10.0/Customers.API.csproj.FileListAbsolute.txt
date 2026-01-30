@@ -145,3 +145,11 @@
 /Users/masha/Desktop/workspace/Backend/Customers.API/obj/Debug/net10.0/Customers.API.csproj.AssemblyReference.cache
 /Users/masha/Desktop/workspace/Backend/Customers.API/obj/Debug/net10.0/Customer.855B5F60.Up2Date
 /Users/masha/Desktop/workspace/Backend/Customers.API/bin/Debug/net10.0/Customers.API.staticwebassets.runtime.json
+/Users/masha/Desktop/workspace/Backend/Customers.API/bin/Debug/net10.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/masha/Desktop/workspace/Backend/Customers.API/bin/Debug/net10.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/masha/Desktop/workspace/Backend/Customers.API/bin/Debug/net10.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/masha/Desktop/workspace/Backend/Customers.API/bin/Debug/net10.0/Microsoft.IdentityModel.Logging.dll
+/Users/masha/Desktop/workspace/Backend/Customers.API/bin/Debug/net10.0/Microsoft.IdentityModel.Protocols.dll
+/Users/masha/Desktop/workspace/Backend/Customers.API/bin/Debug/net10.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/masha/Desktop/workspace/Backend/Customers.API/bin/Debug/net10.0/Microsoft.IdentityModel.Tokens.dll
+/Users/masha/Desktop/workspace/Backend/Customers.API/bin/Debug/net10.0/System.IdentityModel.Tokens.Jwt.dll
