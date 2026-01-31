@@ -9,6 +9,9 @@
 
   <ItemGroup>
     <Folder Include="Data/" />
+    <Folder Include="Features/Baskets/GetBasketById/" />
+    <Folder Include="Features/Baskets/GetBaskets/" />
+    <Folder Include="Features/Baskets/UpsertBasket/" />
     <Folder Include="Features/CustomerAddress/" />
     <Folder Include="Features/Customers/Constants/" />
     <Folder Include="Features/Customers/DeleteCustomer/" />

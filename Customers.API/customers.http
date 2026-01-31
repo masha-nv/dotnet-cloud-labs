@@ -29,3 +29,17 @@ DELETE http://localhost:5097/api/customers/b2936cc3-ab81-4ff2-9bb6-4bca79682543
 
 ###
 GET http://localhost:5097/api/customers/addresses
+
+###
+GET http://localhost:5097/api/baskets
+
+###
+PUT http://localhost:5097/api/baskets/fd141078-2f83-4dc6-850e-ae7686e1d0c4
+Content-Type: application/json 
+
+{
+    "items": [{"quantity": 20}]
+}
+
+###
+GET http://localhost:5097/api/baskets/D31153CA-C800-4EBF-A38E-AE4D1CF33015

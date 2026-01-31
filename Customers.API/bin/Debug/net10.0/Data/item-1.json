@@ -1,0 +1,64 @@
+{
+  "mystore": [
+    {
+      "PutRequest": {
+        "Item": {
+          "clientid": {
+            "S": "olya@email.com"
+          },
+          "created": {
+            "S": "2020-03-9T08:12Z"
+          },
+          "sku": {
+            "S": "SKU-5523"
+          },
+          "category": {
+            "S": "T-Shirt"
+          },
+          "size": {
+            "S": "Small"
+          },
+          "color": {
+            "S": "Red"
+          },
+          "qty": {
+            "S": "1"
+          },
+          "price": {
+            "S": "30"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "clientid": {
+            "S": "masha@email.com"
+          },
+          "created": {
+            "S": "2022-03-9T08:12Z"
+          },
+          "sku": {
+            "S": "SKU-5523"
+          },
+          "category": {
+            "S": "Dress"
+          },
+          "size": {
+            "S": "Medium"
+          },
+          "color": {
+            "S": "White"
+          },
+          "qty": {
+            "S": "2"
+          },
+          "price": {
+            "S": "300"
+          }
+        }
+      }
+    }
+  ]
+}

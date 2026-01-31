@@ -3,6 +3,7 @@ using System;
 using Customers.API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Customers.API.Migrations
 {
     [DbContext(typeof(CustomerContext))]
-    partial class CustomerContextModelSnapshot : ModelSnapshot
+    [Migration("20260131134617_UpdateBasketItemModel")]
+    partial class UpdateBasketItemModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "10.0.2");
@@ -23,7 +26,10 @@ namespace Customers.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("CustomerBasketId")
+                    b.Property<Guid>("CustomerBasket")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid?>("CustomerBasketId")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Quantity")
@@ -109,9 +115,7 @@ namespace Customers.API.Migrations
                 {
                     b.HasOne("Customers.API.Models.CustomerBasket", null)
                         .WithMany("Items")
-                        .HasForeignKey("CustomerBasketId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CustomerBasketId");
                 });
 
             modelBuilder.Entity("Customers.API.Models.Customer", b =>
