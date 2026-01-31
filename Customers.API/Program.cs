@@ -1,5 +1,6 @@
 using System.Text.Json;
 using Customers.API.Data;
+using Customers.API.Features.Baskets.UpsertBasket;
 using Customers.API.Features.CustomerAddress;
 using Customers.API.Features.Customers;
 using Customers.API.Shared.ErrorHandling;
@@ -45,7 +46,7 @@ else
 app.UseStaticFiles();
 app.MapCustomersEndpoints();
 app.MapCustomerAddressEndpoints();
-
+app.MapBasketsEndpoints();
 
 
 
