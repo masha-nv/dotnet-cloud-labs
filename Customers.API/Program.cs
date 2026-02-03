@@ -1,8 +1,10 @@
 using System.Text.Json;
 using Customers.API.Data;
+using Customers.API.Features.Baskets.Authorization;
 using Customers.API.Features.Baskets.UpsertBasket;
 using Customers.API.Features.CustomerAddress;
 using Customers.API.Features.Customers;
+using Customers.API.Shared.Authorization;
 using Customers.API.Shared.ErrorHandling;
 using Customers.API.Shared.FileUpload;
 using Customers.API.Shared.Timing;
@@ -23,13 +25,16 @@ builder.Services.AddAuthentication()
                 .AddJwtBearer(options =>
                 {
                     options.MapInboundClaims = false;
+                    options.TokenValidationParameters.RoleClaimType = "role";
                 });
+
+builder.AddAppAuthorization();
+builder.Services.AddSingleton<BasketAuthorizationHandler>();
 
 var app = builder.Build();
 
 app.AddMigrations().SeedDb();
 
-// app.UseHealthChecks("/api/customers");
 app.UseHttpLogging();
 app.UseMiddleware<RequestTimingMiddleware>();
 

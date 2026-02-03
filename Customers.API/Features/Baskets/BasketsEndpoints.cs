@@ -11,6 +11,6 @@ public static class BasketsEndpoints
         var group = app.MapGroup("/api/baskets");
         group.MapUpsertBasketEndpoint();
         group.MapGetBasketsEndopint();
-        group.MapGetBasketById();
+        group.MapGetBasketByIdEndpoint();
     }
 }
