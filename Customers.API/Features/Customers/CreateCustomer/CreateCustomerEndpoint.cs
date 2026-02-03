@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Customers.API.Shared.FileUpload;
 using System.Security.Claims;
 using System.IdentityModel.Tokens.Jwt;
+using Customers.API.Shared.Authorization;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Customers.API.Features.Customers.CreateCustomer;
 
@@ -46,7 +48,8 @@ public static class CreateCustomerEndpoint
             await dbContext.Customers.AddAsync(c);
             await dbContext.SaveChangesAsync();
             return Results.CreatedAtRoute(RouteNames.GetCustomerByIdEndPoint, new { id = c.Id }, c.ToCustomerDetailsDto());
-        }).
-        DisableAntiforgery();
+        })
+        .DisableAntiforgery()
+        .RequireAuthorization(Policies.AdminPolicy);
     }
 }
